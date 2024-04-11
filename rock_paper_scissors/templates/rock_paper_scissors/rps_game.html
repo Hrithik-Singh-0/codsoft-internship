@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rock Paper Scissors</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <style>
+
+        .button1 {
+          appearance: none;
+          background-color: transparent;
+          border: 2px solid #1A1A1A;
+          border-radius: 15px;
+          box-sizing: border-box;
+          color: #black;
+          cursor: pointer;
+          display: inline-block;
+          font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+          font-size: 16px;
+          font-weight: 600;
+          line-height: normal;
+          margin: 0;
+          min-height: 60px;
+          min-width: 0;
+          outline: none;
+          padding: 16px 24px;
+          text-align: center;
+          text-decoration: none;
+          transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+          user-select: none;
+          -webkit-user-select: none;
+          touch-action: manipulation;
+          width: 20%;
+          will-change: transform;
+        }
+
+        .button1:hover {
+          color: #fff;
+          background-color: #1A1A1A;
+          box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+          transform: translateY(-2px);
+        }
+
+        .button1:active {
+          box-shadow: none;
+          transform: translateY(0);
+        }
+
+    </style>
+</head>
+<body style="background-image: url({% static 'rock_paper_scissors/rpsbg.jpg' %}); background-repeat:no-repeat; background-size:100%;">
+
+<nav class="navbar" style="background-color:#3c3c3c;">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:8000">
+      <img src="{% static 'logo.jpg' %}" alt="Logo"  class="d-inline-block align-text-top" style="width:60px; height:30px;">
+      <h4 style="display
+:inline-block; color:white;">Hrithik Singh</h4>
+    </a>
+  </div>
+</nav>
+    <h1 style="margin-left:45%; margin-top:10%;">Choose one</h1>
+<form action="result" method="post" style="margin-left:28%; margin-top:5%;"> {% csrf_token %}
+    <button class="button1" type="submit" name="rock">Rock</button>
+    <button class="button1" type="submit" name="paper">paper</button>
+    <button class="button1" type="submit" name="scissors">scissors</button>
+
+</form>
+
+</body>
+</html>
+
+
