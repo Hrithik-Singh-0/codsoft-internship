@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator</title>
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body style="background-image: url({% static 'basic_calculator/calculatorbg.jpg' %}); background-repeat:no-repeat; background-size:100%;">
+
+<nav class="navbar" style="background-color:#3c3c3c;">
+
+  <div class="container-fluid">
+    <a class="navbar-brand" href="http://127.0.0.1:8000">
+      <img src="{% static 'logo.jpg' %}" alt="Logo"  class="d-inline-block align-text-top" style="width:60px; height:30px;">
+      <h4 style="display:inline-block; color:white;">Hrithik Singh</h4>
+    </a>
+  </div>
+</nav>
+
+
+<form action="result" method="post" style="margin-left:40%; margin-top:15%;"> {% csrf_token %}
+    <input type="text" name="number1" placeholder="Enter first number" style=" height:3rem; width:20rem; border-radius:20px; background:linear-gradient(to top right, #adadad 20%, #f6f6f6 62%); border:2px solid;" required>
+    <br>
+    <br>
+    <input type="text" name="number2" placeholder="Enter second number" style=" height:3rem; width:20rem; border-radius:20px; background:linear-gradient(to top right, #adadad 20%, #f6f6f6 62%); border: 2px solid; " required>
+    <br>
+    <br>
+    <button type="submit" name="add" style="width:5rem; height:2.5rem; background-color:black; border-radius:10px; color:white; border:2px solid white;">Add</button>
+    <button type="submit" name="subtract" style="width:5rem; height:2.5rem; background-color:black; border-radius:10px; color:white; border:2px solid white;">Subtract</button>
+    <button type="submit" name="multiply" style="width:5rem; height:2.5rem; background-color:black; border-radius:10px; color:white; border:2px solid white;">Multiply</button>
+    <button type="submit" name="divide" style="width:5rem; height:2.5rem; background-color:black; border-radius:10px; color:white; border:2px solid white;">Divide</button>
+
+</form>
+
+</body>
+</html>
+
